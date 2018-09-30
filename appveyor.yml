@@ -7,8 +7,11 @@ environment:
 
 stack: go 1.11
 
-before_test:
+install:
+  - set PATH=%PATH%;C:\msys64\mingw64\bin
   - go get -v ./...
+
+before_test:
   - go vet ./...
 
 test_script:
