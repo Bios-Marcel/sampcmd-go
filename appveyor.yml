@@ -8,6 +8,7 @@ environment:
 stack: go 1.11
 
 before_test:
+  - go get -v ./...
   - go vet ./...
 
 test_script:
