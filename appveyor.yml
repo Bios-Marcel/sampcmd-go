@@ -15,6 +15,9 @@ install:
   - set PATH=%PATH%;C:\msys64\mingw64\bin
   - go get -v ./...
 
+build_script:
+  - go build
+
 before_test:
   - go vet ./...
 
