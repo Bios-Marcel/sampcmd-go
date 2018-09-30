@@ -1,5 +1,8 @@
 # sampcmd-go
 
+[![Build status](https://ci.appveyor.com/api/projects/status/jmvqa62k30rvyt9i/branch/master?svg=true)](https://ci.appveyor.com/project/Bios-Marcel/sampcmd-go/branch/master)
+[![GoDoc](https://godoc.org/github.com/Bios-Marcel/sampcmd-go?status.svg)](https://godoc.org/github.com/Bios-Marcel/sampcmd-go/sampcmd)
+
 This tool allows you to start SA-MP via the command line, alternatively it can be used as a go library.
 
 ## Commandline Usage
