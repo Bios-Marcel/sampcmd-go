@@ -7,6 +7,10 @@ environment:
 
 stack: go 1.11
 
+artifacts:
+  - path: sampcmd-go.exe
+    name: sampcmd-go.exe
+
 install:
   - set PATH=%PATH%;C:\msys64\mingw64\bin
   - go get -v ./...
