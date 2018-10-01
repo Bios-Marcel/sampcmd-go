@@ -17,10 +17,11 @@ int _LaunchSAMPSetWorkingDir(wchar_t* working_dir, wchar_t* args) {
     memset(&process_info, 0, sizeof(PROCESS_INFORMATION));
     memset(&startup_info, 0, sizeof(STARTUPINFOW));
 
-    memcpy(samp_dll, working_dir, sizeof(wchar_t) * (sz+1));
+    int sz = wcslen(working_dir);
+    memcpy(samp_dll, working_dir, sizeof(wchar_t) * sz);
     wcscat(samp_dll, L"\\samp.dll");
 
-    memcpy(gta_sa_exe, working_dir, sizeof(wchar_t) * (sz+1));
+    memcpy(gta_sa_exe, working_dir, sizeof(wchar_t) * sz);
     wcscat(gta_sa_exe, L"\\gta_sa.exe");
 
     if (module_handle)
@@ -80,7 +81,7 @@ int _LaunchSAMPSetWorkingDir(wchar_t* working_dir, wchar_t* args) {
 int _LaunchSAMP(wchar_t* args) {
     wchar_t cur_dir[FILENAME_MAX + 1];
     memset(cur_dir, 0, sizeof(wchar_t) * (FILENAME_MAX + 1));
-    DWORD sz = GetCurrentDirectoryW(FILENAME_MAX, cur_dir);
+    GetCurrentDirectoryW(FILENAME_MAX, cur_dir);
 
     return _LaunchSAMPSetWorkingDir((wchar_t * )(cur_dir[0]), args);
 }
