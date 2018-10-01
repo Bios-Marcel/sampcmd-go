@@ -13,6 +13,6 @@ import (
 //LaunchSAMP launches the SA-MP client passing along the given string as its commandline parameters.
 func LaunchSAMP(args string) int {
 	wcharString, _ := gowchar.StringToWcharT(args)
-	castedShit := (*C.wchar_t)(wcharString)
-	return int(C._LaunchSAMP(castedShit))
+	argsAsWchar := (*C.wchar_t)(wcharString)
+	return int(C._LaunchSAMP(argsAsWchar))
 }
