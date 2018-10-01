@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int _LaunchSAMPSetWorkingDir(wchar_t* working_dir, wchar_t* args) {
- int ret = 0;
+    int ret = 0;
     HMODULE module_handle = GetModuleHandleW(L"kernel32.dll");
     FARPROC load_library_w_proc;
     LPVOID ptr; 
@@ -82,5 +82,5 @@ int _LaunchSAMP(wchar_t* args) {
     memset(cur_dir, 0, sizeof(wchar_t) * (FILENAME_MAX + 1));
     DWORD sz = GetCurrentDirectoryW(FILENAME_MAX, cur_dir);
 
-    return _LaunchSAMPSetWorkingDir(&cur_dir, args);
+    return _LaunchSAMPSetWorkingDir((wchar_t * )(cur_dir[0]), args);
 }
