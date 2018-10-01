@@ -83,5 +83,5 @@ int _LaunchSAMP(wchar_t* args) {
     memset(cur_dir, 0, sizeof(wchar_t) * (FILENAME_MAX + 1));
     GetCurrentDirectoryW(FILENAME_MAX, cur_dir);
 
-    return _LaunchSAMPSetWorkingDir((wchar_t * )(cur_dir[0]), args);
+    return _LaunchSAMPSetWorkingDir((wchar_t * )cur_dir, args);
 }
