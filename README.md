@@ -20,6 +20,8 @@ if(returnValue != 0) {
 }
 ```
 
+For all available functions, check the documentation at [https://godoc.org/github.com/Bios-Marcel/sampcmd-go/sampcmd](https://godoc.org/github.com/Bios-Marcel/sampcmd-go/sampcmd).
+
 ## Available parameters
 
 * `-d`
