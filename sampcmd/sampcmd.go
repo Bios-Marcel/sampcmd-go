@@ -54,5 +54,8 @@ func LaunchSAMPDetectGTADirectory(args string) int {
 		return RegistryError
 	}
 
-	return int(C._LaunchSAMPSetWorkingDir(filepath.Dir(path), argsAsWcharCPointer))
+	pathAsWchar, _ := gowchar.StringToWcharT(args)
+	pathAsWcharCPointer := (*C.wchar_t)(pathAsWchar)
+
+	return int(C._LaunchSAMPSetWorkingDir(filepath.Dir(pathAsWcharCPointer), argsAsWcharCPointer))
 }
