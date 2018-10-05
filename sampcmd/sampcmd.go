@@ -8,6 +8,7 @@ int _LaunchSAMPSetWorkingDir(wchar_t *working_dir, wchar_t *args);
 import "C"
 
 import (
+	"fmt"
 	"path/filepath"
 
 	"github.com/orofarne/gowchar"
@@ -56,6 +57,9 @@ func LaunchSAMPDetectGTADirectory(args string) int {
 
 	pathAsWchar, _ := gowchar.StringToWcharT(filepath.Dir(path))
 	pathAsWcharCPointer := (*C.wchar_t)(pathAsWchar)
+
+	//Don't remove this magic print statement, the code breaks otherwise. IT MAKES NO SENSE.
+	fmt.Println(" ")
 
 	return int(C._LaunchSAMPSetWorkingDir(pathAsWcharCPointer, argsAsWcharCPointer))
 }
